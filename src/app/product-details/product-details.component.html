@@ -1,0 +1,19 @@
+<app-toolbar></app-toolbar>
+<div class="row">
+    <div class="col s6 m6" >
+        <div class="card">
+            <div class="card-image">
+                <img src="{{product.imagen}}">
+            </div>
+            <div class="card-content">
+                <p>{{product.nombre }} <span class="badge new">{{ product.cantidad }}</span></p>
+                <button class="btn">{{ product.precio | currency }}</button>         
+            </div>           
+            <div class="card-action">
+                <a [routerLink]="['/store']" >Regresar</a>            
+            </div>
+        </div>
+    </div>
+    <div class="col s6 m6" >
+    </div>        
+</div>

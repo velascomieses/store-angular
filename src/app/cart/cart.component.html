@@ -1,0 +1,12 @@
+<app-toolbar></app-toolbar>
+<div class="card-panel">
+    <h3>Cart</h3>
+    <div *ngFor="let item of items">
+        <div class="chip" >
+            <img src="{{item.data.imagen}}" alt="Contact Person">
+            {{ item.data.nombre }} <span> ({{ item.cant }}) </span> <span class="blue-text">SUB TOTAL: {{ (item.cant * item.data.precio).toFixed(2) | currency }}</span>
+        </div>   
+    </div>
+    <h4> TOTAL: {{ this.total().toFixed(2) | currency }}</h4>
+    <button class="waves-light btn-small" (click)="buy()">Comprar</button>
+</div>

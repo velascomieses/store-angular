@@ -1,0 +1,28 @@
+<app-toolbar></app-toolbar>
+<div class="row">
+    <div class="col s12 m12">
+        <div class="input-field col s6">
+            <input placeholder="Search" id="query" type="text" (input)="query(q.value)" #q>            
+        </div>        
+    </div>
+</div>
+<div class="row">
+    <div class="col s12 m4" *ngFor="let item of items" >
+        <div class="card" style="height: 366px;">
+            <div class="card-image">
+                <img src="{{item.data.imagen}}" style="height: 153px;">
+            </div>
+            <div class="card-content">
+                <p>{{item.data.nombre }} <span class="blue-text">({{ item.data.precio | currency }})</span> <span class="new badge">{{item.data.cantidad}}</span></p>
+                <div class="">
+                    <input id="cant" type="text" value="1" #cant >
+                    <button class="btn" (click)="addToCart(item, cant.value)" >Add</button>
+                </div>             
+            </div>           
+            <div class="card-action">
+                <a [routerLink]="['/products', item.id]" >Más</a>        
+            </div>
+        </div>       
+    </div>
+  
+</div>   
